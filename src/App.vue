@@ -1,28 +1,42 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Navbar />
+    <router-view/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Report from './components/Report.vue'
+import Navbar from './components/Navbar.vue'
+import {db} from './firebase';
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    Report, Navbar
+  },
+  data() {
+    return {
+      reports: {}
+    }
+  },
+
+  firebase: {
+    reports: {
+      source: db.ref("HelpReport").orderByChild('created_at'),
+      asObject: true,
+      // Optional, allows you to handle any errors.
+      cancelCallback(err) {
+        console.error(err);
+      }
+    }
   }
+
 }
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+
 }
 </style>
