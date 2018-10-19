@@ -17,8 +17,6 @@
                             <p>Happening Right Now</p>
                         </a>
                     </li>
-                    <!-- <a><router-link to="/witnessreport">About</router-link></a> -->
-                    <!-- <router-view></router-view> -->
                 </ul>
             </div>
         </div>
