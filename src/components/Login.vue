@@ -25,6 +25,7 @@
 				var inputPassword = this.inputPasswordVal.trim();
 				if(inputEmail == "kahxien27@gmail.com" && inputPassword == "admin"){
 					this.$router.replace('/')
+					console.log('Email & Password matched');
 					// window.location.href = '/';
 
 				}else{
