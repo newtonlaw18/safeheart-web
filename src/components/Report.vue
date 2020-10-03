@@ -69,7 +69,7 @@
 		name: 'Report',
 		props: {
 		    // user_name: String,
-		    // created_at: String,
+		    created_at: String,
 		    report: Object
 		},
 		methods: {
